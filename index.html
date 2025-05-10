@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- ➕ Подключение normalize.css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <!-- 💡 Добавь фавиконку -->
+    <link rel="icon" type="image/png" href="images/favicon.png">
+    <title>Профессиональная фотосъёмка | Анна Петрова</title>
+    <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+    <!-- ❌ Удален дублирующийся футер в конце -->
+    <header class="header">
+        <nav class="nav">
+            <a href="#" class="logo" itemprop="name">Анна Photo</a> <!-- 💡 Добавлена микроразметка -->
+            <div class="menu">
+                <a href="#aboutme">Обо мне</a>
+                <a href="#uslugi">Услуги</a>
+                <a href="#portfolio">Портфолио</a> <!-- ➕ Исправлена опечатка в ID -->
+                <a href="#contacts">Контакты</a>
+            </div>
+            <button class="menu-toggle" aria-label="Открыть меню">☰</button> <!-- 💡 Добавлена доступность -->
+                <button id="theme-toggle" class="theme-btn" aria-label="Сменить тему">🌙</button> 
+        </nav>
+    </header>
+
+    <main class="main-content">
+        <section class="hero">
+            <h1>Снимаем ваши самые яркие моменты</h1>
+            <p>Свадьбы, корпоративы, семейные фотосессии</p>
+            <button class="cta-button">Заказать фотосессию</button>
+        </section>
+
+        <!-- 💡 Добавлена микроразметка для фотографа -->
+        <div itemscope itemtype="http://schema.org/Photographer">
+            <section class="gallery" id="portfolio">
+                <h2>Портфолио</h2>
+                <div class="grid-container">
+                    <!-- ➕ Добавлены размеры и ленивая загрузка -->
+                    <img src="image/photo1.jpg" alt="Пример работ 1" 
+                         loading="lazy" width="400" height="600">
+                    <img src="image/photo2.jpg" alt="Пример работ 2" 
+                         loading="lazy" width="400" height="600">
+                    <img src="image/photo3.jpg" alt="Пример работ 3" 
+                         loading="lazy" width="400" height="600">
+                    <img src="image/photo4.jpg" alt="Пример работ 4" 
+                         loading="lazy" width="400" height="600">
+                    <img src="image/photo5.jpg" alt="Пример работ 5" 
+                         loading="lazy" width="400" height="600">
+                    <img src="image/photo6.jpg" alt="Пример работ 6" 
+                         loading="lazy" width="400" height="600">
+                </div>
+            </section>
+        </div>
+
+        <!-- Модальное окно со слайдером -->
+        <div id="modal" class="modal">
+            <span class="modal-close">&times;</span>
+            <button class="slider-btn prev">❮</button>
+            <img class="modal-image" id="modalImage" src="" alt="Увеличенное фото">
+            <button class="slider-btn next">❯</button>
+        </div>
+
+        <section class="order-form" id="order">
+            <h2>Заказать съёмку</h2>
+            <form class="form" id="form">
+                <div class="form-group">
+                    <label for="name">Ваше имя:</label>
+                    <input type="text" id="name" name="name" required minlength="2">
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">Телефон:</label>
+                    <input type="tel" id="phone" name="phone" 
+                           pattern="\+7\d{10}" 
+                           required
+                           aria-describedby="phone-hint"> <!-- 💡 Связь с подсказкой -->
+                    <span class="hint" id="phone-hint">Формат: +71234567890</span>
+                </div>
+
+                <div class="form-group">
+                    <label for="service">Тип съёмки:</label>
+                    <select id="service" name="service" required>
+                        <option value="">Выберите...</option>
+                        <option value="wedding">Свадебная</option>
+                        <option value="portrait">Портретная</option>
+                        <option value="event">Мероприятия</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Дополнительно:</label>
+                    <textarea id="message" name="message" rows="4"></textarea>
+                </div>
+
+                <button type="submit" class="cta-button">Отправить заявку</button>
+            </form>
+        </section>
+
+        <footer class="footer" id="contacts">
+            <div class="footer-content">
+                <div class="contacts">
+                    <h3>Контакты</h3>
+                    <ul>
+                        <!-- 💡 Добавлена микроразметка -->
+                        <li itemprop="telephone">📞 <a href="tel:+79991234567">+7 (999) 123-45-67</a></li>
+                        <li itemprop="email">📧 <a href="mailto:hello@anna-photo.ru">hello@anna-photo.ru</a></li>
+                        <li itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+                            📍 <span itemprop="addressLocality">Москва</span>, 
+                            <span itemprop="streetAddress">ул. Фотографическая, 15</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="social">
+                    <h3>Мы в соцсетях</h3>
+                    <div class="social-links">
+                        <a href="https://vk.com" target="_blank" rel="noopener">📘 ВКонтакте</a>
+                        <a href="https://instagram.com" target="_blank" rel="noopener">📸 Instagram</a>
+                        <a href="https://t.me" target="_blank" rel="noopener">✈️ Telegram</a>
+                    </div>
+                </div>
+
+                <div class="map">
+                    <iframe 
+                        src="https://yandex.ru/map-widget/v1/?um=constructor%3A1a5d8e3..." 
+                        width="100%" 
+                        height="300" 
+                        style="border:0;"
+                        title="Карта расположения студии"
+                        aria-label="Карта"
+                        loading="lazy"
+                        allowfullscreen>
+                    </iframe>
+                </div>
+            </div>
+        <section class="comments" id="reviews">
+            <h2>Отзывы</h2>
+
+            <form id="comment-form">
+                <input type="text" id="comment-name" placeholder="Ваше имя" required>
+                <textarea id="comment-text" placeholder="Ваш отзыв" required></textarea>
+                <button type="submit" id="comment-submit" class="cta-button">Отправить</button>
+            </form>
+
+            <div class="comments-list" id="comments-container"></div>
+            <template id="reply-template">
+                <form class="reply-form">
+                  <input type="text" class="reply-name" placeholder="Ваше имя" required>
+                  <textarea class="reply-text" placeholder="Ваш ответ" required></textarea>
+                  <button type="submit" class="cta-button small">Отправить ответ</button>
+                </form>
+              </template>
+            
+        </section>
+            <div class="copyright">
+                <p>© 2024 Anna Photo. Все права защищены</p>
+            </div>
+        </footer>
+    </main>
+
+    <!-- ❌ Удалены дублирующиеся скрипты -->
+    <!-- ➕ Скрипт подключен один раз в конце -->
+    <script src="scripts/main.js"></script>
+</body>
+</html>
