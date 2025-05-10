@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ru" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Вход | Анна Петрова</title>
+    <!-- Подключение стилей с правильным относительным путем -->
+    <link rel="stylesheet" href="../../styles/main.css">
+</head>
+<body>
+    <header class="header">
+        <nav class="nav">
+            <a href="../../index.html" class="logo">Анна Photo</a>
+            <div class="menu">
+                <a href="../../index.html">На главную</a>
+                <a href="../auth/register.html">Регистрация</a>
+                <button id="theme-toggle" class="theme-btn" aria-label="Сменить тему">🌙</button>
+            </div>
+        </nav>
+    </header>
+
+    <div class="auth-container">
+        <h1>Вход в систему</h1>
+        <form id="loginForm">
+            <div class="form-group">
+                <label for="loginEmail">Email:</label>
+                <input type="email" id="loginEmail" placeholder="Введите email" required>
+            </div>
+            <div class="form-group">
+                <label for="loginPassword">Пароль:</label>
+                <input type="password" id="loginPassword" placeholder="Введите пароль" required>
+            </div>
+            <button type="submit">Войти</button>
+        </form>
+        <p class="auth-links">
+            Нет аккаунта? <a href="../auth/register.html">Зарегистрируйтесь</a>
+        </p>
+    </div>
+
+    <script src="scripts/auth.js"></script>
+    <script src="scripts/theme.js"></script>
+</body>
+</html>

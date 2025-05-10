@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ru" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Регистрация | Анна Петрова</title>
+    <!-- Подключение стилей с правильным относительным путем -->
+    <link rel="stylesheet" href="../../styles/main.css">
+</head>
+<body>
+    <header class="header">
+        <nav class="nav">
+            <a href="../../index.html" class="logo">Анна Photo</a>
+            <div class="menu">
+                <a href="../../index.html">На главную</a>
+                <a href="../auth/login.html">Вход</a>
+                <button id="theme-toggle" class="theme-btn" aria-label="Сменить тему">🌙</button>
+            </div>
+        </nav>
+    </header>
+
+    <div class="auth-container">
+        <h1>Регистрация</h1>
+        <form id="registerForm">
+          <!-- Поле имени -->
+          <div class="form-group">
+            <label for="name">Имя:</label>
+            <input type="text" id="name" placeholder="Введите ваше имя" required minlength="2">
+          </div>
+      
+          <!-- Поле email -->
+          <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" id="email" placeholder="Введите ваш email" required>
+          </div>
+      
+          <!-- Поле пароля -->
+          <div class="form-group">
+            <label for="password">Пароль:</label>
+            <input type="password" id="password" 
+                   placeholder="Минимум 8 символов, 1 заглавная буква и цифра"
+                   pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" 
+                   title="Минимум 8 символов, 1 заглавная буква и цифра">
+          </div>
+      
+          <button type="submit">Зарегистрироваться</button>
+        </form>
+        <p class="auth-links">
+            Уже есть аккаунт? <a href="../auth/login.html">Войдите</a>
+        </p>
+    </div>
+
+    <script src="scripts/auth.js"></script>
+    <script src="scripts/theme.js"></script>
+</body>
+</html>
